@@ -14,6 +14,7 @@ class Player {
 document.getElementById('player-form').addEventListener('submit', function(event) {
     event.preventDefault();
     
+    document.getElementById('playerListTitle').textContent = 'List of Players: ';
     document.getElementById('submitButton').style.display = 'none';
 
     const playerNamesInput = document.getElementById('player-names');
@@ -93,6 +94,7 @@ document.getElementById('player-form').addEventListener('submit', function(event
             for (let i = 0; i < playerArrayObj.length; i++) {
                 totalScore += playerArrayObj[i].score;
                 if (totalScore === 7) {
+                    document.getElementById('leaderboardTitle').textContent = 'Leaderboard: ';
                     fillLeaderboard();
                     
                     for (let i = 0; i < playerArrayObj.length; i++) {
