@@ -1,9 +1,15 @@
 body {
+    background-color: black;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
+img {
+    max-width: 20%;
+    height: auto;
+}
+
 .container {
-    margin-top: 40px;
+    margin-top: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -16,6 +22,18 @@ body {
     gap: 20px;
 }
 
+#playerN1, #playerN2, #playerN3, #playerN4, #playerN5, #playerN6 {
+    padding: 1rem;
+    background-color: #F4A140;
+    border-radius: .5rem;
+}
+
+#name-0, #name-1, #name-2, #name-3, #name-4, #name-5 {
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 1rem;
+}
+
 #button-div-0 , #button-div-1 , #button-div-2 , #button-div-3 , #button-div-4, #button-div-5 {
     display: flex;
     flex-direction: row;
@@ -26,7 +44,7 @@ ul {
 }
 
 li {
-    margin: 20px;
+    margin: 10px;
 }
 
 #div-0, #div-1, #div-2, #div-3, #div-4, #div-5
@@ -34,12 +52,16 @@ li {
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: white;
+    padding: 40px;
+    border-radius: .5rem;
 }
 
 .title {
-    font-weight: normal;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    font-weight: semi-bold;
+    font-size: 40px;
+    margin-top: 30px;
+    color: white;
 }
 
 form {
@@ -51,7 +73,7 @@ form {
 #player-names {
     margin-top: 20px;
     padding: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 16px;
@@ -59,24 +81,29 @@ form {
 }
 
 button {
+    color: black;
+    font-weight: bold;
     padding: 10px 20px;
     border: none;
     border-radius: 9px;
     font-size: 16px;
-    background-color: #007bff;
-    color: white;
+    background-color: #F4A140;
     cursor: pointer;
     margin: 5px;
+    transition: opacity 0.5s ease-in-out;
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #d17915;
+    color: white;
+    transition: opacity 0.5s ease-in-out;
 }
 
 #result {
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
     font-size: 30px;
+    color: white;
 }
 
 #result.show {

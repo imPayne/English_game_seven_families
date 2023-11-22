@@ -11,6 +11,19 @@ class Player {
     }
   }
 
+let checkStart = false;
+
+function checkStartGame() {
+    if (checkStart === false) {
+        checkStart = true;
+        for (let i = 0; i < 6; i++) {
+            document.getElementById(`playerN${i + 1}`).style.display = 'none';
+        }
+    }
+}
+
+checkStartGame();
+
 document.getElementById('player-form').addEventListener('submit', function(event) {
     event.preventDefault();
     
@@ -39,7 +52,7 @@ document.getElementById('player-form').addEventListener('submit', function(event
     const randomPlayer = playerNamesArray[randomIndex];
 
     const resultDisplay = document.getElementById('result');
-    resultDisplay.textContent = `The player who start ${randomPlayer}`;
+    resultDisplay.textContent = `The player who start in first is ${randomPlayer}`;
 
     resultDisplay.classList.add('show');
 
@@ -57,11 +70,12 @@ document.getElementById('player-form').addEventListener('submit', function(event
         playerArrayObj[i].decreaseButton.textContent = '-';
         playerArrayObj[i].nameElement = document.createElement('span');
         playerArrayObj[i].nameElement.textContent = `${playerArrayObj[i].name}`;
-        
+        playerArrayObj[i].nameElement.setAttribute('id', `name-${i}`);
+
         document.getElementById("playerListDiv").appendChild(playerArrayObj[i].htmlElement);
-        document.getElementById("playerListDiv").appendChild(playerArrayObj[i].buttonDivElement);
         document.getElementById(`div-${i}`).appendChild(playerArrayObj[i].nameElement);
         document.getElementById(`div-${i}`).appendChild(playerArrayObj[i].scoreElement);
+        document.getElementById(`div-${i}`).appendChild(playerArrayObj[i].buttonDivElement);
         document.getElementById(`button-div-${i}`).appendChild(playerArrayObj[i].decreaseButton);
         document.getElementById(`button-div-${i}`).appendChild(playerArrayObj[i].addButton);
 
@@ -109,18 +123,12 @@ document.getElementById('player-form').addEventListener('submit', function(event
         }
 
         function fillLeaderboard() {
-            playerArrayObj.sort((a, b) => b.score - a.score);
             let currentLi = null;
+
+            playerArrayObj.sort((a, b) => b.score - a.score);
             for (let i = 0; i < playerArrayObj.length; i++) {
                 currentLi = document.getElementById(`playerN${i + 1}`);
-                if (i === 0) {
-                    currentLi.textContent = `The Winner is : ${playerArrayObj[i].name} with ${playerArrayObj[i].score} families found`;
-                    currentLi.style.color = 'orange';
-                }
-                else {
-                    currentLi.textContent = `Place N°${i + 1}: ${playerArrayObj[i].name} with ${playerArrayObj[i].score} families found`;
-                }
-                
+                currentLi.textContent = `${i + 1}: ${playerArrayObj[i].name} with ${playerArrayObj[i].score} families`;
                 document.getElementById('leaderboard').appendChild(currentLi);
             }
         }
