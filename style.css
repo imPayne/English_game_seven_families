@@ -100,10 +100,10 @@ button {
 }
 
 #buttonPlayer-0, #buttonPlayer-1, #buttonPlayer-2, #buttonPlayer-3, #buttonPlayer-4, #buttonPlayer-5 {
-    padding: 1rem !important;
+    padding: 2rem !important;
     width: 4rem !important;
-    padding-bottom: .5rem !important;
-    padding-top: .5rem !important;
+    padding-bottom: 1rem !important;
+    padding-top: 1rem !important;
     margin-right: .5rem !important;
     cursor: pointer !important;
 }
