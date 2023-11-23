@@ -4,7 +4,7 @@ body {
 }
 
 img {
-    max-width: 20%;
+    max-width: 50%;
     height: auto;
 }
 
@@ -30,7 +30,7 @@ img {
 
 #name-0, #name-1, #name-2, #name-3, #name-4, #name-5 {
     font-weight: bold;
-    font-size: 20px;
+    font-size: 3rem;
     margin-bottom: 1rem;
 }
 
@@ -47,11 +47,16 @@ li {
     margin: 10px;
 }
 
+#div-0, #div-1, #div-2, #div-3, #div-4, #div-5 {
+    font-size: 2rem;
+}
+
 #div-0, #div-1, #div-2, #div-3, #div-4, #div-5
 {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     background-color: white;
     padding: 40px;
     border-radius: .5rem;
@@ -59,8 +64,9 @@ li {
 
 .title {
     font-weight: semi-bold;
-    font-size: 40px;
-    margin-top: 30px;
+    font-size: 2.5rem;
+    margin-top: 2rem;
+    padding: 1rem;
     color: white;
 }
 
@@ -71,26 +77,35 @@ form {
 }
 
 #player-names {
-    margin-top: 20px;
-    padding: 10px;
+    margin-top: 1rem;
+    padding: 1.5rem;
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    font-size: 16px;
-    width: 300px;
+    font-size: 1.5rem;
+    width: 500px;
+    height: 35px;
 }
 
 button {
     color: black;
+    width: auto;
     font-weight: bold;
-    padding: 10px 20px;
+    padding: 30px 30px;
     border: none;
     border-radius: 9px;
-    font-size: 16px;
+    font-size: 2rem;
     background-color: #F4A140;
-    cursor: pointer;
     margin: 5px;
-    transition: opacity 0.5s ease-in-out;
+}
+
+#buttonPlayer-0, #buttonPlayer-1, #buttonPlayer-2, #buttonPlayer-3, #buttonPlayer-4, #buttonPlayer-5 {
+    padding: 1rem !important;
+    width: 4rem !important;
+    padding-bottom: .5rem !important;
+    padding-top: .5rem !important;
+    margin-right: .5rem !important;
+    cursor: pointer !important;
 }
 
 button:hover {

@@ -66,8 +66,13 @@ document.getElementById('player-form').addEventListener('submit', function(event
         playerArrayObj[i].decreaseButton = document.createElement('button');
         playerArrayObj[i].scoreElement = document.createElement('span');
         playerArrayObj[i].scoreElement.textContent = `Families found: ${playerArrayObj[i].score}`;
+        playerArrayObj[i].scoreElement.setAttribute('id', `score-${i}`);
         playerArrayObj[i].addButton.textContent = '+';
         playerArrayObj[i].decreaseButton.textContent = '-';
+        playerArrayObj[i].addButton.setAttribute('id', `buttonPlayer-${i}`);
+        playerArrayObj[i].decreaseButton.setAttribute('id', `buttonPlayer-${i}`);
+
+
         playerArrayObj[i].nameElement = document.createElement('span');
         playerArrayObj[i].nameElement.textContent = `${playerArrayObj[i].name}`;
         playerArrayObj[i].nameElement.setAttribute('id', `name-${i}`);
