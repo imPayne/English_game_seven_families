@@ -128,6 +128,7 @@ document.getElementById('player-form').addEventListener('submit', function(event
             playerArrayObj.sort((a, b) => b.score - a.score);
             for (let i = 0; i < playerArrayObj.length; i++) {
                 currentLi = document.getElementById(`playerN${i + 1}`);
+                currentLi.style.display = '';
                 currentLi.textContent = `${i + 1}: ${playerArrayObj[i].name} with ${playerArrayObj[i].score} families`;
                 document.getElementById('leaderboard').appendChild(currentLi);
             }
