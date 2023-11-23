@@ -14,6 +14,8 @@ class Player {
 let checkStart = false;
 
 function checkStartGame() {
+    document.getElementById('bonusDiv').style.display = 'none';
+
     if (checkStart === false) {
         checkStart = true;
         for (let i = 0; i < 6; i++) {
@@ -27,6 +29,7 @@ checkStartGame();
 document.getElementById('player-form').addEventListener('submit', function(event) {
     event.preventDefault();
     
+    document.getElementById('bonusDiv').style.display = 'flex';
     document.getElementById('playerListTitle').textContent = 'List of Players: ';
     document.getElementById('submitButton').style.display = 'none';
 
@@ -56,6 +59,12 @@ document.getElementById('player-form').addEventListener('submit', function(event
 
     resultDisplay.classList.add('show');
 
+    document.getElementById('bonusBtn').addEventListener('click', function() {
+        const randomCardPick = Math.floor(Math.random() * 3) + 1;
+
+        document.getElementById('bonusDisplay').textContent = `You pick ${randomCardPick} card(s) in the player's hand of your choice !`;
+    });
+
     for (let i = 0; i < playerArrayObj.length; i++) {
         playerArrayObj[i].htmlElement = document.createElement('div');
         playerArrayObj[i].htmlElement.setAttribute('id', `div-${i}`);
@@ -71,7 +80,6 @@ document.getElementById('player-form').addEventListener('submit', function(event
         playerArrayObj[i].decreaseButton.textContent = '-';
         playerArrayObj[i].addButton.setAttribute('id', `buttonPlayer-${i}`);
         playerArrayObj[i].decreaseButton.setAttribute('id', `buttonPlayer-${i}`);
-
 
         playerArrayObj[i].nameElement = document.createElement('span');
         playerArrayObj[i].nameElement.textContent = `${playerArrayObj[i].name}`;
