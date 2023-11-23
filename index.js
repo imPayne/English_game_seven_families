@@ -59,10 +59,15 @@ document.getElementById('player-form').addEventListener('submit', function(event
 
     resultDisplay.classList.add('show');
 
-    document.getElementById('bonusBtn').addEventListener('click', function() {
+    document.getElementById('bonusBtn').addEventListener('click', async function() {
         const randomCardPick = Math.floor(Math.random() * 3) + 1;
 
+        document.getElementById('bonusDiv').style.display = 'flex';
         document.getElementById('bonusDisplay').textContent = `You pick ${randomCardPick} card(s) in the player's hand of your choice !`;
+
+        setTimeout(() => {
+            document.getElementById('bonusDisplay').style.display = 'none';
+        }, 5000);
     });
 
     for (let i = 0; i < playerArrayObj.length; i++) {
@@ -128,6 +133,7 @@ document.getElementById('player-form').addEventListener('submit', function(event
                         playerArrayObj[i].addButton.disabled = true;
                         playerArrayObj[i].decreaseButton.disabled = true;
                         document.getElementById(`button-div-${i}`).style.display = 'none';
+                        document.getElementById('bonusDiv').style.display = 'none';
                     }
                     return true;
                 }
