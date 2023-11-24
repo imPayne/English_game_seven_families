@@ -1,3 +1,30 @@
+/* Ajoute ces styles à la fin de ton fichier CSS existant */
+
+/* Mobile First */
+
+/* Reset du zoom sur les champs de saisie */
+input,
+textarea,
+button,
+select {
+    font-size: 100%; /* Réinitialise la taille de police par défaut */
+    max-width: 100%; /* Garde la largeur maximale égale à la largeur du conteneur parent */
+}
+
+/* Styles spécifiques pour les petits écrans */
+@media screen and (max-width: 767px) {
+    /* Ajustements pour les petits écrans (moins de 768px de largeur) */
+
+    body {
+        font-size: 16px; /* Taille de police de base pour les petits écrans */
+    }
+
+    #player-names {
+        width: 100%; /* Définit la largeur de l'input à 100% pour les petits écrans */
+        max-width: 100%; /* Ajuste la largeur maximale au cas où */
+    }
+}
+
 body {
     background-color: black;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
