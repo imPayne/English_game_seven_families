@@ -34,6 +34,8 @@ document.getElementById('player-form').addEventListener('submit', function(event
     document.getElementById('submitButton').style.display = 'none';
 
     const playerNamesInput = document.getElementById('player-names');
+    document.getElementById('playerFound').style.display = 'none';
+    playerNamesInput.style.display = 'none';
     const playerNames = playerNamesInput.value;
     const playerNamesArray = playerNames.split(',');
     let playerArrayObj = [];
